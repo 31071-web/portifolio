@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio pessoal de Matheus Ismério da Silva, estudante do 2º ano do Ensino Médio Técnico em Desenvolvimento de Sistemas em Campinas, SP.">
+  <meta name="author" content="Matheus Ismério da Silva">
+  <title>Matheus Ismério da Silva | Portfólio Pessoal</title>
+
+  <!-- Google Fonts: Fonte moderna para texto e monoespaçada para código/terminal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra de progresso de leitura no topo com brilho dinâmico -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-glow"></div>
+  </div>
+
+  <!-- Cursor Personalizado de Alta Fidelidade (desativado em telas touch) -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring" aria-hidden="true"></div>
+  <canvas class="cursor-trail-canvas" id="cursor-trail-canvas" aria-hidden="true"></canvas>
+
+  <!-- Notificação Flutuante / Toast para Micro-interações -->
+  <div class="ui-toast" id="ui-toast" role="status" aria-live="polite" aria-hidden="true">
+    <span class="ui-toast-icon">✦</span>
+    <span class="ui-toast-msg" id="ui-toast-msg">Mensagem atualizada!</span>
+  </div>
+
+  <!-- Cabeçalho e Menu de Navegação -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#inicio" class="logo magnetic-btn" aria-label="Ir para o início do portfólio">
+        <span class="logo-bracket">&lt;</span><span class="logo-name">Matheus</span><span class="logo-dot">.</span><span class="logo-dev">dev</span><span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Botão Menu Mobile -->
+      <button class="mobile-menu-toggle magnetic-btn" id="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navegação Principal -->
+      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre mim</a></li>
+          <li><a href="#trajetoria" class="nav-link">Trajetória</a></li>
+          <li><a href="#conhecimentos" class="nav-link">Conhecimentos</a></li>
+          <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#evolucao" class="nav-link">Evolução</a></li>
+          <li><a href="#galeria" class="nav-link">Galeria</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#interativo" class="nav-link">Interativo</a></li>
+          <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==============================================
+         2. PÁGINA INICIAL / HERO SECTION
+         ============================================== -->
+    <section class="hero-section" id="inicio">
+      <!-- Fundo Tecnológico com Canvas de Partículas Interativo -->
+      <div class="tech-grid-bg" aria-hidden="true"></div>
+      <canvas id="hero-particles-canvas" class="hero-particles-canvas" aria-hidden="true"></canvas>
+
+      <!-- Elementos Decorativos de Fundo com Parallax -->
+      <div class="ambient-glow-orb orb-1" data-parallax-speed="0.12" aria-hidden="true"></div>
+      <div class="ambient-glow-orb orb-2" data-parallax-speed="-0.15" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-indicator"></span>
+            <span>Estudante de Tecnologia</span>
+          </div>
+
+          <h1 class="hero-title animate-reveal" data-text-reveal="letters">
+            Matheus Ismério da Silva
+          </h1>
+
+          <p class="hero-subtitle">
+            Estudante de Desenvolvimento de Sistemas
+          </p>
+
+          <p class="hero-quote" data-text-reveal="words">
+            &ldquo;Aprendendo hoje, evoluindo a cada dia e construindo meu caminho na tecnologia.&rdquo;
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#sobre" class="btn btn-primary magnetic-btn" id="btn-hero-sobre">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Sobre mim
+            </a>
+            <a href="#trajetoria" class="btn btn-secondary magnetic-btn" id="btn-hero-trajetoria">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              Minha trajetória
+            </a>
+          </div>
+        </div>
+
+        <!-- Ilustração de Computador com Linhas de Código e Elementos Digitais Vivos -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-laptop-wrapper interactive-3d-card" data-parallax-speed="0.08">
+            <div class="floating-badge badge-1" data-parallax-speed="0.2">
+              <code>&lt;html&gt; &amp; &lt;css&gt;</code>
+            </div>
+            <div class="floating-badge badge-2" data-parallax-speed="-0.18">
+              <code>function evoluir()</code>
+            </div>
+            <div class="floating-badge badge-3" data-parallax-speed="0.25">
+              <code>const foco = true;</code>
+            </div>
+
+            <!-- Faíscas e Glifos Digitais Flutuantes -->
+            <div class="floating-code-spark spark-1">{ }</div>
+            <div class="floating-code-spark spark-2">&lt;/&gt;</div>
+            <div class="floating-code-spark spark-3">=&gt;</div>
+            <div class="floating-code-spark spark-4">01</div>
+
+            <!-- SVG Ilustração do Computador -->
+            <svg class="laptop-illustration" viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Brilho de fundo sutil -->
+              <circle cx="270" cy="180" r="160" fill="url(#heroGlow)" opacity="0.3" class="laptop-glow-circle"/>
+
+              <!-- Moldura do Monitor com Brilho Laser -->
+              <rect x="70" y="30" width="400" height="240" rx="16" fill="#0b1120" stroke="#334155" stroke-width="3"/>
+              <!-- Tela -->
+              <rect x="86" y="46" width="368" height="208" rx="8" fill="#030712"/>
+
+              <!-- Barra Superior da Janela de Código -->
+              <rect x="86" y="46" width="368" height="28" rx="8" fill="#111827"/>
+              <circle cx="106" cy="60" r="5" fill="#ef4444"/>
+              <circle cx="122" cy="60" r="5" fill="#f59e0b"/>
+              <circle cx="138" cy="60" r="5" fill="#10b981"/>
+              <text x="270" y="64" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">estudante.js — visual studio</text>
+
+              <!-- Linhas de Código na Tela com Cursor Pulsante -->
+              <g font-family="'JetBrains Mono', monospace" font-size="12">
+                <text x="105" y="100" fill="#a855f7">const</text>
+                <text x="150" y="100" fill="#60a5fa">aluno</text>
+                <text x="195" y="100" fill="#94a3b8">=</text>
+                <text x="210" y="100" fill="#f8fafc">&quot;Matheus Ismério&quot;;</text>
+
+                <text x="105" y="125" fill="#a855f7">let</text>
+                <text x="135" y="125" fill="#60a5fa">curso</text>
+                <text x="180" y="125" fill="#94a3b8">=</text>
+                <text x="195" y="125" fill="#34d399">&quot;Desenvolvimento de Sistemas&quot;;</text>
+
+                <text x="105" y="150" fill="#a855f7">let</text>
+                <text x="135" y="150" fill="#60a5fa">ano</text>
+                <text x="165" y="150" fill="#94a3b8">=</text>
+                <text x="180" y="150" fill="#fbbf24">&quot;2º ano do Ensino Médio&quot;;</text>
+
+                <text x="105" y="180" fill="#3b82f6">function</text>
+                <text x="175" y="180" fill="#f59e0b">aprenderCadaDia</text>
+                <text x="295" y="180" fill="#94a3b8">() {</text>
+                
+                <text x="125" y="205" fill="#a855f7">return</text>
+                <text x="175" y="205" fill="#38bdf8">&quot;Evolução contínua na tecnologia!&quot;;</text>
+                
+                <text x="105" y="230" fill="#94a3b8">}</text>
+
+                <!-- Cursor piscante animado no editor -->
+                <rect x="118" y="220" width="8" height="13" fill="#60a5fa" class="editor-live-cursor"/>
+              </g>
+
+              <!-- Base do Laptop -->
+              <path d="M30 270 L510 270 L480 295 L60 295 Z" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+              <rect x="220" y="272" width="100" height="6" rx="3" fill="#475569"/>
+              <rect x="180" y="295" width="180" height="10" rx="4" fill="#0f172a"/>
+
+              <!-- Gradientes -->
+              <defs>
+                <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicador animado de rolagem para baixo -->
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <a href="#sobre" class="scroll-indicator-link magnetic-btn" aria-label="Rolar para a seção Sobre Mim">
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+          <span class="scroll-indicator-text">Role para explorar</span>
+          <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         3. SOBRE MIM
+         ============================================== -->
+    <section class="section sobre-section" id="sobre">
+      <div class="ambient-glow-orb orb-3" data-parallax-speed="0.1" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Apresentação</span>
+          <h2 class="section-title">Sobre mim</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="sobre-grid">
+          <div class="sobre-text-card interactive-3d-card">
+            <p class="sobre-paragrafo-destaque" data-text-reveal="words">
+              &ldquo;Meu nome é Matheus Ismério da Silva, sou estudante do 2º ano do Ensino Médio Técnico em Desenvolvimento de Sistemas, em Campinas, SP. Gosto muito de tecnologia e estou sempre buscando aprender coisas novas, conhecer ferramentas diferentes e desenvolver minhas habilidades. Estou no começo da minha jornada na programação, mas tenho interesse em evoluir cada vez mais, entender como os sistemas funcionam e descobrir novas possibilidades dentro da área de informática.&rdquo;
+            </p>
+
+            <div class="sobre-tags-list">
+              <div class="info-pill magnetic-btn">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <span>2º ano Ensino Médio Técnico</span>
+              </div>
+              <div class="info-pill magnetic-btn">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span>Desenvolvimento de Sistemas</span>
+              </div>
+              <div class="info-pill magnetic-btn">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Campinas, SP</span>
+              </div>
+              <div class="info-pill magnetic-btn">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Aprendizado e Dedicação</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ilustração de Ambiente de Estudos e Tecnologia com Profundidade 3D -->
+          <div class="sobre-visual" aria-hidden="true">
+            <div class="desk-illustration-wrapper interactive-3d-card" data-parallax-speed="0.1">
+              <svg class="desk-illustration" viewBox="0 0 460 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Mesa de Estudos -->
+                <rect x="40" y="270" width="380" height="14" rx="5" fill="#1e293b"/>
+                <rect x="80" y="284" width="16" height="60" rx="3" fill="#0f172a"/>
+                <rect x="364" y="284" width="16" height="60" rx="3" fill="#0f172a"/>
+
+                <!-- Luminária de Mesa -->
+                <path d="M90 270 L90 170 Q90 120 140 120" stroke="#6366f1" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <path d="M125 105 L160 135 L125 150 Z" fill="#818cf8"/>
+                <polygon points="140,140 260,265 170,265" fill="#818cf8" opacity="0.08"/>
+
+                <!-- Laptop Aberto -->
+                <rect x="180" y="160" width="160" height="100" rx="6" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+                <rect x="188" y="168" width="144" height="84" rx="3" fill="#030712"/>
+                <!-- Linhas na tela do laptop -->
+                <line x1="198" y1="182" x2="250" y2="182" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+                <line x1="198" y1="194" x2="290" y2="194" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                <line x1="198" y1="206" x2="270" y2="206" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
+                <line x1="198" y1="218" x2="235" y2="218" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+                <line x1="198" y1="230" x2="280" y2="230" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Teclado/Base Laptop -->
+                <path d="M165 260 L355 260 L345 270 L175 270 Z" fill="#334155"/>
+
+                <!-- Caderno de Anotações e Caneta -->
+                <rect x="360" y="250" width="45" height="20" rx="2" fill="#8b5cf6" transform="rotate(-5 360 250)"/>
+                <line x1="365" y1="258" x2="395" y2="255" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+                <rect x="350" y="266" width="35" height="3" rx="1.5" fill="#38bdf8" transform="rotate(35 350 266)"/>
+
+                <!-- Caneca de Café/Chá de Estudos -->
+                <rect x="120" y="240" width="24" height="30" rx="4" fill="#3b82f6"/>
+                <path d="M144 246 C152 246, 152 260, 144 260" stroke="#3b82f6" stroke-width="3" fill="none"/>
+                <!-- Vapor -->
+                <path d="M128 232 Q130 226 128 220" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+                <path d="M136 230 Q138 224 136 218" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         4. MINHA TRAJETÓRIA ESCOLAR
+         ============================================== -->
+    <section class="section trajetoria-section" id="trajetoria">
+      <div class="ambient-glow-orb orb-4" data-parallax-speed="-0.12" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Educação</span>
+          <h2 class="section-title">Minha trajetória escolar</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Linha conectora central com preenchimento reativo à rolagem -->
+          <div class="timeline-line" aria-hidden="true"></div>
+          <div class="timeline-line-progress" id="timeline-line-progress" aria-hidden="true"></div>
+
+          <!-- Card 1: Colégio Vivendo e Aprendendo -->
+          <div class="timeline-item timeline-left scroll-reveal scroll-reveal-left">
+            <div class="timeline-marker" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="timeline-card school-card interactive-3d-card">
+              <div class="school-header">
+                <!-- Logotipo Oficial com Fallback -->
+                <div class="school-logo-container">
+                  <img src="images/logo-vivendo-e-aprendendo.png" 
+                       alt="Logotipo do Colégio Vivendo e Aprendendo" 
+                       class="school-logo-img" 
+                       loading="lazy"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="school-logo-fallback" style="display: none;">
+                    <span>VIVAP</span>
+                  </div>
+                </div>
+                <div class="school-title-group">
+                  <h3 class="school-name">Colégio Vivendo e Aprendendo</h3>
+                  <p class="school-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Localização: Campinas, SP.
+                  </p>
+                </div>
+              </div>
+              <div class="school-body">
+                <p class="school-description">
+                  Instituição onde construí passos essenciais da minha formação educacional e pessoal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Colégio Raphael Di Santo -->
+          <div class="timeline-item timeline-right scroll-reveal scroll-reveal-right">
+            <div class="timeline-marker" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="timeline-card school-card interactive-3d-card">
+              <div class="school-header">
+                <!-- Logotipo Oficial com Fallback -->
+                <div class="school-logo-container">
+                  <img src="images/logo-raphael-di-santo.png" 
+                       alt="Logotipo do Colégio Raphael Di Santo" 
+                       class="school-logo-img" 
+                       loading="lazy"
+                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="school-logo-fallback" style="display: none;">
+                    <span>RDS</span>
+                  </div>
+                </div>
+                <div class="school-title-group">
+                  <h3 class="school-name">Colégio Raphael Di Santo</h3>
+                  <p class="school-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Unidade Garcia, Campinas, SP.
+                  </p>
+                </div>
+              </div>
+              <div class="school-body">
+                <p class="school-description">
+                  Colégio onde estou cursando o Ensino Médio Técnico em Desenvolvimento de Sistemas, aprendendo programação e conceitos de informática.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         5. MEUS CONHECIMENTOS E INTERESSES
+         ============================================== -->
+    <section class="section conhecimentos-section" id="conhecimentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Aprendizado Atual</span>
+          <h2 class="section-title">O que estou aprendendo</h2>
+          <p class="section-subtitle">
+            Áreas e tecnologias que estou estudando e praticando no curso técnico. Clique em cada cartão para saber mais!
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="knowledge-grid">
+          <!-- Card HTML -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="html" 
+                   id="card-html">
+            <div class="knowledge-icon-box icon-html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">HTML</h3>
+            <p class="knowledge-short">Linguagem de marcação usada para estruturar o conteúdo e as páginas na web.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card CSS -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="css" 
+                   id="card-css">
+            <div class="knowledge-icon-box icon-css">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">CSS</h3>
+            <p class="knowledge-short">Folhas de estilo que dão cores, fontes, organização visual e responsividade aos sites.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card JavaScript -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="javascript" 
+                   id="card-javascript">
+            <div class="knowledge-icon-box icon-js">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">JavaScript</h3>
+            <p class="knowledge-short">Linguagem de programação que adiciona dinamismo, interatividade e funções aos sites.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card Lógica de Programação -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="logica" 
+                   id="card-logica">
+            <div class="knowledge-icon-box icon-logica">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">Lógica de programação</h3>
+            <p class="knowledge-short">O raciocínio passo a passo necessário para resolver problemas usando algoritmos e condições.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card Banco de Dados -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="banco-dados" 
+                   id="card-banco-dados">
+            <div class="knowledge-icon-box icon-db">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">Banco de dados</h3>
+            <p class="knowledge-short">Conceitos fundamentais de armazenamento, tabelas e organização de informações.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card Informática -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="informatica" 
+                   id="card-informatica">
+            <div class="knowledge-icon-box icon-info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">Informática</h3>
+            <p class="knowledge-short">Compreensão de sistemas operacionais, hardware, redes e ferramentas do dia a dia.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+
+          <!-- Card Desenvolvimento de Sistemas -->
+          <article class="knowledge-card interactive-3d-card" 
+                   tabindex="0" 
+                   role="button" 
+                   aria-expanded="false" 
+                   data-tech="desenvolvimento" 
+                   id="card-desenvolvimento">
+            <div class="knowledge-icon-box icon-dev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+              </svg>
+            </div>
+            <h3 class="knowledge-name">Desenvolvimento de sistemas</h3>
+            <p class="knowledge-short">Visão estruturada sobre como construir soluções completas que atendam a necessidades reais.</p>
+            <span class="knowledge-action-prompt">
+              <span>Clique para ver detalhes</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal para Detalhes dos Conhecimentos -->
+    <div class="modal-backdrop" id="knowledge-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-tech-title">
+      <div class="modal-card interactive-3d-card">
+        <button class="modal-close-btn magnetic-btn" id="modal-close-btn" aria-label="Fechar janela de detalhes">&times;</button>
+        <div class="modal-header">
+          <div class="modal-icon-badge" id="modal-tech-icon"></div>
+          <div>
+            <span class="modal-kicker">Conhecimento em Desenvolvimento</span>
+            <h3 class="modal-title" id="modal-tech-title">Nome da Tecnologia</h3>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-text-group">
+            <h4 class="modal-subtitle">O que essa área representa:</h4>
+            <p class="modal-description" id="modal-tech-description"></p>
+          </div>
+          <div class="modal-text-group">
+            <h4 class="modal-subtitle">Como faz parte do meu aprendizado:</h4>
+            <p class="modal-learning" id="modal-tech-learning"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-action-btn magnetic-btn" id="modal-action-btn">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         6. TERMINAL INTERATIVO
+         ============================================== -->
+    <section class="section terminal-section" id="terminal">
+      <div class="ambient-glow-orb orb-5" data-parallax-speed="0.14" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interação</span>
+          <h2 class="section-title">Terminal interativo</h2>
+          <p class="section-subtitle">
+            Explore informações sobre mim executando comandos simulados no terminal. Clique nos botões ou digite na linha de comando!
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="terminal-wrapper interactive-3d-card">
+          <!-- Barra Superior do Terminal -->
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="terminal-dot red" title="Fechar"></span>
+              <span class="terminal-dot yellow" title="Minimizar"></span>
+              <span class="terminal-dot green" title="Maximizar"></span>
+            </div>
+            <div class="terminal-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>Matheus@portfolio: ~</span>
+            </div>
+            <div class="terminal-actions">
+              <button class="btn-terminal-clear magnetic-btn" id="btn-clear-terminal" title="Limpar terminal" aria-label="Limpar histórico do terminal">
+                Limpar
+              </button>
+            </div>
+          </div>
+
+          <!-- Comandos Rápidos Clicáveis -->
+          <div class="terminal-chips" aria-label="Comandos rápidos disponíveis">
+            <span class="chips-label">Comandos sugeridos:</span>
+            <button class="terminal-chip magnetic-btn" data-command="sobre-mim">sobre-mim</button>
+            <button class="terminal-chip magnetic-btn" data-command="interesses">interesses</button>
+            <button class="terminal-chip magnetic-btn" data-command="estudos">estudos</button>
+            <button class="terminal-chip magnetic-btn" data-command="objetivos">objetivos</button>
+            <button class="terminal-chip magnetic-btn" data-command="ajuda">ajuda</button>
+          </div>
+
+          <!-- Corpo de Saída do Terminal -->
+          <div class="terminal-body" id="terminal-output" aria-live="polite">
+            <div class="terminal-welcome">
+              <p class="term-dim">Bem-vindo ao terminal pessoal de Matheus Ismério da Silva [v1.0.0]</p>
+              <p class="term-dim">Digite um comando ou clique nos atalhos acima para navegar.</p>
+              <p class="term-dim">Dica: digite <span class="term-hl">ajuda</span> para ver todos os comandos disponíveis.</p>
+              <br>
+            </div>
+          </div>
+
+          <!-- Linha de Entrada de Comando -->
+          <form class="terminal-input-row" id="terminal-form" autocomplete="off">
+            <label for="terminal-input" class="terminal-prompt">
+              <span class="prompt-user">Matheus</span><span class="prompt-at">@</span><span class="prompt-host">portfolio</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+            </label>
+            <input type="text" 
+                   id="terminal-input" 
+                   class="terminal-input" 
+                   placeholder="digite um comando (ex: sobre-mim)..." 
+                   spellcheck="false" 
+                   autocapitalize="off" 
+                   autocorrect="off">
+            <button type="submit" class="terminal-submit-btn magnetic-btn" aria-label="Executar comando">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         7. MINHA EVOLUÇÃO
+         ============================================== -->
+    <section class="section evolucao-section" id="evolucao">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Objetivos Pessoais</span>
+          <h2 class="section-title">Minha evolução na tecnologia</h2>
+          <p class="section-subtitle">
+            Meu progresso como estudante e os passos que estou construindo para o meu futuro.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="evolution-path">
+          <!-- Etapa 1 -->
+          <div class="evolution-step scroll-reveal" data-step="1">
+            <div class="step-badge">1</div>
+            <div class="step-card interactive-3d-card">
+              <div class="step-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="step-title">Onde estou:</h3>
+              <p class="step-text">
+                aprendendo os fundamentos da programação e conhecendo as ferramentas da área.
+              </p>
+              <div class="step-status status-current">
+                <span class="status-dot"></span>
+                <span>Etapa Atual</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conector Dinâmico -->
+          <div class="step-connector" aria-hidden="true">
+            <div class="connector-line">
+              <div class="connector-pulse"></div>
+            </div>
+            <div class="connector-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Etapa 2 -->
+          <div class="evolution-step scroll-reveal" data-step="2">
+            <div class="step-badge">2</div>
+            <div class="step-card interactive-3d-card">
+              <div class="step-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="step-title">Meu próximo passo:</h3>
+              <p class="step-text">
+                praticar os conteúdos das aulas e desenvolver minhas habilidades.
+              </p>
+              <div class="step-status status-next">
+                <span class="status-dot"></span>
+                <span>Próximo Passo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conector Dinâmico -->
+          <div class="step-connector" aria-hidden="true">
+            <div class="connector-line">
+              <div class="connector-pulse"></div>
+            </div>
+            <div class="connector-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div class="evolution-step scroll-reveal" data-step="3">
+            <div class="step-badge">3</div>
+            <div class="step-card interactive-3d-card">
+              <div class="step-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="step-title">Onde quero chegar:</h3>
+              <p class="step-text">
+                criar meus próprios projetos e descobrir qual área da tecnologia combina mais comigo.
+              </p>
+              <div class="step-status status-future">
+                <span class="status-dot"></span>
+                <span>Meta Futura</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         GALERIA DE TECNOLOGIA COM ROLAGEM HORIZONTAL
+         ============================================== -->
+    <section class="section galeria-section" id="galeria">
+      <div class="ambient-glow-orb orb-6" data-parallax-speed="0.12" aria-hidden="true"></div>
+      
+      <!-- Container com rolagem horizontal cinematográfica -->
+      <div class="galeria-sticky-container" id="galeria-sticky-container">
+        <div class="container galeria-header-container">
+          <div class="section-header">
+            <span class="section-tag">Universo Tecnológico</span>
+            <h2 class="section-title">Galeria visual de tecnologia</h2>
+            <p class="section-subtitle">
+              Uma imersão cinematográfica pelos conceitos, ferramentas e ambientes que inspiram minha trajetória de estudos.
+            </p>
+            <div class="section-divider"></div>
+          </div>
+
+          <!-- Controles Interativos da Galeria -->
+          <div class="galeria-nav-controls" aria-label="Controles da galeria">
+            <button class="galeria-btn-nav prev magnetic-btn" id="galeria-prev-btn" aria-label="Item anterior da galeria">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="galeria-counter" id="galeria-counter" aria-live="polite">01 / 05</span>
+            <button class="galeria-btn-nav next magnetic-btn" id="galeria-next-btn" aria-label="Próximo item da galeria">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Trilho Horizontal de Cartões -->
+        <div class="galeria-track-wrapper" id="galeria-track-wrapper">
+          <div class="galeria-track" id="galeria-track">
+            <!-- Card 1: Programação -->
+            <article class="galeria-card interactive-3d-card" data-index="0">
+              <div class="galeria-card-image-box">
+                <img src="images/galeria-programacao.jpg" alt="Conceito visual de programação e escrita de código em editor moderno" class="galeria-card-img" loading="lazy">
+                <div class="galeria-card-overlay"></div>
+                <span class="galeria-card-badge">01 • Código &amp; Lógica</span>
+              </div>
+              <div class="galeria-card-content">
+                <h3 class="galeria-card-title">A Arte da Programação</h3>
+                <p class="galeria-card-desc">
+                  Transformar raciocínio estruturado em comandos claros para o computador. A fascinante prática de resolver problemas com sintaxe limpa, lógica e organização.
+                </p>
+                <div class="galeria-card-tags">
+                  <span class="g-tag">Sintaxe</span>
+                  <span class="g-tag">Algoritmos</span>
+                  <span class="g-tag">Resolução de Problemas</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Computadores & Hardware -->
+            <article class="galeria-card interactive-3d-card" data-index="1">
+              <div class="galeria-card-image-box">
+                <img src="images/galeria-computadores.jpg" alt="Conceito visual de arquitetura de computadores e processador de alta tecnologia" class="galeria-card-img" loading="lazy">
+                <div class="galeria-card-overlay"></div>
+                <span class="galeria-card-badge">02 • Hardware &amp; Máquinas</span>
+              </div>
+              <div class="galeria-card-content">
+                <h3 class="galeria-card-title">Arquitetura de Computadores</h3>
+                <p class="galeria-card-desc">
+                  O poder por trás da tela: processadores, memórias, circuitos e placas-mãe que trabalham em harmonia para executar milhões de instruções a cada fração de segundo.
+                </p>
+                <div class="galeria-card-tags">
+                  <span class="g-tag">Hardware</span>
+                  <span class="g-tag">Circuitos</span>
+                  <span class="g-tag">Sistemas</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Desenvolvimento Web -->
+            <article class="galeria-card interactive-3d-card" data-index="2">
+              <div class="galeria-card-image-box">
+                <img src="images/galeria-desenvolvimento.jpg" alt="Conceito visual de desenvolvimento web moderno e interfaces digitais" class="galeria-card-img" loading="lazy">
+                <div class="galeria-card-overlay"></div>
+                <span class="galeria-card-badge">03 • Web &amp; Interfaces</span>
+              </div>
+              <div class="galeria-card-content">
+                <h3 class="galeria-card-title">Criação Web Moderna</h3>
+                <p class="galeria-card-desc">
+                  Unir HTML semântico, estilos CSS avançados e scripts dinâmicos para criar aplicações rápidas, responsivas e visualmente marcantes na web.
+                </p>
+                <div class="galeria-card-tags">
+                  <span class="g-tag">HTML5 &amp; CSS3</span>
+                  <span class="g-tag">JavaScript</span>
+                  <span class="g-tag">UI/UX</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Ambiente de Estudos -->
+            <article class="galeria-card interactive-3d-card" data-index="3">
+              <div class="galeria-card-image-box">
+                <img src="images/galeria-ambiente.jpg" alt="Ambiente de estudos e aprendizado de programação com monitores e anotações" class="galeria-card-img" loading="lazy">
+                <div class="galeria-card-overlay"></div>
+                <span class="galeria-card-badge">04 • Foco &amp; Prática</span>
+              </div>
+              <div class="galeria-card-content">
+                <h3 class="galeria-card-title">Ambiente de Aprendizado</h3>
+                <p class="galeria-card-desc">
+                  A rotina de dedicação aos estudos: revisando os conteúdos das aulas técnicas, testando novas funções no editor e construindo conhecimento passo a passo.
+                </p>
+                <div class="galeria-card-tags">
+                  <span class="g-tag">Dedicação</span>
+                  <span class="g-tag">Prática Diária</span>
+                  <span class="g-tag">Constância</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Tecnologia & Criatividade -->
+            <article class="galeria-card interactive-3d-card" data-index="4">
+              <div class="galeria-card-image-box">
+                <img src="images/galeria-criatividade.jpg" alt="Conceito abstrato de tecnologia, criatividade e ideias digitais" class="galeria-card-img" loading="lazy">
+                <div class="galeria-card-overlay"></div>
+                <span class="galeria-card-badge">05 • Futuro &amp; Ideias</span>
+              </div>
+              <div class="galeria-card-content">
+                <h3 class="galeria-card-title">Tecnologia &amp; Criatividade</h3>
+                <p class="galeria-card-desc">
+                  O software como um meio infinito de criar soluções úteis. Cada nova tecnologia aprendida abre portas para novos projetos e descobertas no mundo digital.
+                </p>
+                <div class="galeria-card-tags">
+                  <span class="g-tag">Inovação</span>
+                  <span class="g-tag">Novas Tecnologias</span>
+                  <span class="g-tag">Evolução</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Indicador de Progresso da Galeria -->
+        <div class="galeria-progress-wrapper" aria-hidden="true">
+          <div class="galeria-progress-bar" id="galeria-progress-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         8. PROJETOS FUTUROS
+         ============================================== -->
+    <section class="section projetos-section" id="projetos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Galeria em Construção</span>
+          <h2 class="section-title">Meus projetos futuros</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projetos-wrapper">
+          <div class="projetos-intro-card interactive-3d-card">
+            <div class="projetos-intro-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <p class="projetos-intro-text">
+              &ldquo;Este espaço será dedicado aos projetos que desenvolver ao longo da minha jornada. Ainda estou aprendendo e quero utilizar meus conhecimentos para criar sites, sistemas e outras ideias no futuro.&rdquo;
+            </p>
+          </div>
+
+          <!-- Cards demonstrativos de "Em breve" preparados para trabalhos futuros -->
+          <div class="future-cards-grid">
+            <div class="future-card main-future-card interactive-3d-card">
+              <div class="future-card-banner">
+                <div class="future-pulse-container">
+                  <span class="future-pulse-circle"></span>
+                  <span class="future-badge-text">Em breve</span>
+                </div>
+              </div>
+              <div class="future-card-content">
+                <div class="future-icon-container">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="future-card-title">Espaço para novos projetos</h3>
+                <p class="future-card-msg">
+                  Acompanhe minha evolução! Conforme eu avançar nos estudos do Ensino Médio Técnico e criar minhas próprias aplicações, disponibilizarei os códigos, demonstrações e aprendizados diretamente aqui.
+                </p>
+                <div class="future-placeholder-tags">
+                  <span class="p-tag">Prática de Código</span>
+                  <span class="p-tag">Aplicações Web</span>
+                  <span class="p-tag">Sistemas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="future-card secondary-future-card interactive-3d-card">
+              <div class="future-card-banner">
+                <span class="future-badge-text">Próximos passos</span>
+              </div>
+              <div class="future-card-content">
+                <div class="future-icon-container">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <h3 class="future-card-title">Projetos práticos das aulas</h3>
+                <p class="future-card-msg">
+                  Exercícios e sistemas desenvolvidos durante o curso técnico em Desenvolvimento de Sistemas para fixar banco de dados, lógica e interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         9 & 10. ILUSTRAÇÃO INTERATIVA E BOTÃO DE INSPIRAÇÃO
+         ============================================== -->
+    <section class="section interativo-section" id="interativo">
+      <div class="ambient-glow-orb orb-7" data-parallax-speed="-0.1" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interatividade</span>
+          <h2 class="section-title">Computador interativo &amp; Inspiração</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="interactive-grid">
+          <!-- 9. Computador Ilustrado Interativo -->
+          <div class="interactive-column">
+            <div class="interactive-card interactive-3d-card">
+              <div class="card-caption">
+                <h3 class="interactive-heading">Computador de Ideias</h3>
+                <p class="interactive-sub">Clique na tela do computador ou no botão para trocar a mensagem exibida:</p>
+              </div>
+
+              <!-- Ilustração Interativa em SVG/CSS -->
+              <div class="interactive-pc-container" id="interactive-pc" role="button" tabindex="0" aria-label="Computador interativo: clique para trocar a frase na tela">
+                <div class="pc-device">
+                  <!-- Monitor -->
+                  <div class="pc-monitor">
+                    <div class="pc-screen" id="pc-screen">
+                      <div class="pc-code-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                      </div>
+                      <div class="pc-message-box">
+                        <span class="pc-cursor-icon">&gt;</span>
+                        <p class="pc-message-text" id="pc-message-text">Todo conhecimento começa com curiosidade.</p>
+                      </div>
+                      <span class="pc-screen-hint">Clique na tela para mudar ↻</span>
+                    </div>
+                  </div>
+                  <!-- Suporte do Monitor -->
+                  <div class="pc-stand"></div>
+                  <div class="pc-base"></div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-center magnetic-btn" id="btn-next-pc-quote">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                Alternar frase do computador
+              </button>
+            </div>
+          </div>
+
+          <!-- 10. Botão de Inspiração: "Uma ideia para hoje" -->
+          <div class="interactive-column">
+            <div class="interactive-card inspiration-card interactive-3d-card">
+              <div class="card-caption">
+                <h3 class="interactive-heading">Uma ideia para hoje</h3>
+                <p class="interactive-sub">Pequenos lembretes sobre aprender, criar e persistir na jornada da tecnologia.</p>
+              </div>
+
+              <div class="inspiration-box">
+                <div class="quote-symbol" aria-hidden="true">&ldquo;</div>
+                <p class="inspiration-quote-text" id="inspiration-text">
+                  Aprender a programar é como aprender um novo idioma: a prática diária constrói a fluência.
+                </p>
+                <div class="inspiration-meta">
+                  <span class="inspiration-badge">Pensamento de Tecnologia</span>
+                </div>
+              </div>
+
+              <button class="btn btn-secondary btn-center magnetic-btn" id="btn-new-inspiration">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                Nova frase
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         11. MEUS OBJETIVOS
+         ============================================== -->
+    <section class="section objetivos-section" id="objetivos">
+      <div class="ambient-glow-orb orb-8" data-parallax-speed="0.1" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visão de Futuro</span>
+          <h2 class="section-title">Meus objetivos</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="objetivos-container">
+          <div class="objetivos-main-card interactive-3d-card">
+            <div class="objetivos-icon-lead" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+
+            <p class="objetivos-text" data-text-reveal="words">
+              &ldquo;Quero aprofundar meus conhecimentos na área de tecnologia, aprender novas linguagens de programação e entender melhor as diferentes áreas de atuação dentro da informática. Também pretendo criar sites, desenvolver sistemas e descobrir qual área combina mais comigo profissionalmente.&rdquo;
+            </p>
+          </div>
+
+          <!-- Destaques Visuais dos Objetivos -->
+          <div class="objetivos-pillars-grid">
+            <div class="pillar-card interactive-3d-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Aprofundar conhecimentos</h3>
+              <p class="pillar-desc">Dominar conceitos fundamentais e entender como os computadores e sistemas operam por dentro.</p>
+            </div>
+
+            <div class="pillar-card interactive-3d-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Novas linguagens</h3>
+              <p class="pillar-desc">Explorar diferentes linguagens e sintaxes para ampliar o leque de possibilidades de desenvolvimento.</p>
+            </div>
+
+            <div class="pillar-card interactive-3d-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Criar sites e sistemas</h3>
+              <p class="pillar-desc">Transformar ideias e linhas de código em soluções reais, intuitivas e bem estruturadas.</p>
+            </div>
+
+            <div class="pillar-card interactive-3d-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Descobrir minha vocação</h3>
+              <p class="pillar-desc">Conhecer as áreas de atuação em TI para escolher a especialização que mais combina comigo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha Laser de Transição -->
+    <div class="section-laser-divider" aria-hidden="true"></div>
+
+    <!-- ==============================================
+         12. RODAPÉ E MENSAGEM FINAL
+         ============================================== -->
+    <section class="section final-message-section" id="mensagem-final">
+      <div class="container">
+        <div class="final-card interactive-3d-card">
+          <div class="final-icon-halo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+
+          <h2 class="final-title" data-text-reveal="letters">Este é apenas o começo.</h2>
+
+          <div class="final-text-content">
+            <p class="final-body-text" data-text-reveal="words">
+              &ldquo;Este portfólio representa o início da minha trajetória na tecnologia. Mesmo ainda não tendo projetos próprios publicados, quero utilizar este espaço para registrar minha evolução, apresentar meus conhecimentos e compartilhar meus futuros trabalhos. Acredito que aprender é um processo contínuo e que cada nova experiência pode contribuir para o meu crescimento pessoal e profissional.&rdquo;
+            </p>
+          </div>
+
+          <div class="final-signature">
+            <h3 class="signature-name">Matheus Ismério da Silva</h3>
+            <p class="signature-role">Estudante de Desenvolvimento de Sistemas</p>
+            <p class="signature-quote">
+              &ldquo;Aprendendo hoje, evoluindo a cada dia e construindo meu caminho na tecnologia.&rdquo;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Discreto -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="footer-copy">
+        &copy; <span id="current-year">2026</span> <strong>Matheus Ismério da Silva</strong> — Portfólio pessoal.
+      </p>
+      <p class="footer-tech">
+        Construído com HTML, CSS e JavaScript puro.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo com Efeito Magnético -->
+  <button class="back-to-top magnetic-btn" id="btn-back-to-top" aria-label="Voltar para o topo da página" title="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>
